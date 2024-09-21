@@ -15,6 +15,14 @@ D_1 = zeros(4, 2);      % No direct feedthrough
 D_2 = zeros(1, 2);      % No direct feedthrough
 D_3 = zeros(1, 2);      % No direct feedthrough
 
-Kf_1=rand(4,4);
-Kf_2=rand(4,1);
-Kf_3=rand(4,1);
+Q=[0.01 0 0 0;
+    0 1 0 0;
+    0 0 0.01 0;
+    0 0 0 1];
+R=1;
+
+
+Kf_1=lqr(A',C_1',Q,R)';
+Kf_2=lqr(A',C_2',Q,R)';
+Kf_3=lqr(A',C_3',Q,R)';
+
