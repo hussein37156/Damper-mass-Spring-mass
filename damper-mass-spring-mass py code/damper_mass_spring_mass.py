@@ -41,10 +41,10 @@ for i in range(k):
 # Convert list to array for plotting
 Xk = np.array(Xk)
 
-XK_1= Xk[:, 1, 0]  # Extract first column of Xk
+XK_1= Xk[:, 2, 0]  # Extract first column of Xk
 
 # Plot XK_1 vs time
-plt.plot(T[:k], u1[:k])
+plt.plot(T[:k], XK_1[:k])
 plt.xlabel('Time (s)')
 plt.ylabel('XK_1')
 plt.title('XK_1 vs Time')
