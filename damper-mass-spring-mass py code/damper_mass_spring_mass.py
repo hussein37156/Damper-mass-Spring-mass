@@ -35,10 +35,35 @@ for i in range(k):
 
 Xk = np.array(Xk)
 
-XK_1= Xk[:, 2, 0] 
+X_1= Xk[:, 0, 0]
+X_2= Xk[:, 1, 0] 
+X_3= Xk[:, 2, 0] 
+X_4= Xk[:, 3, 0]  
 
 # Plot XK_1 vs time
-plt.plot(T[:k], XK_1[:k])
+plt.plot(T[:k], X_1[:k])
+plt.xlabel('Time (s)')
+plt.ylabel('XK_1')
+plt.title('XK_1 vs Time')
+plt.grid(True)
+plt.show()
+
+
+plt.plot(T[:k], X_2[:k])
+plt.xlabel('Time (s)')
+plt.ylabel('XK_1')
+plt.title('XK_1 vs Time')
+plt.grid(True)
+plt.show()
+
+plt.plot(T[:k], X_3[:k])
+plt.xlabel('Time (s)')
+plt.ylabel('XK_1')
+plt.title('XK_1 vs Time')
+plt.grid(True)
+plt.show()
+
+plt.plot(T[:k], X_4[:k])
 plt.xlabel('Time (s)')
 plt.ylabel('XK_1')
 plt.title('XK_1 vs Time')
