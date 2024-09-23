@@ -18,30 +18,24 @@ Bd = np.array([[0.0049, 0.0000],
                 [0.0000, 0.0050],
                 [0.0016, 0.0983]])
 
+T = np.arange(0, t, Ts)  
 
-# Generate time vector
-T = np.arange(0, t, Ts)  # Time vector from 0 to 10 seconds with a step of 0.01
+u1 = np.sin(f_1 * T)  
+u2 = np.sin(f_2 * T)  
 
-# Create input signals
-u1 = np.sin(f_1 * T)  # Sine wave input
-u2 = np.sin(f_2 * T)  # Sine wave input
+U = np.vstack((u1, u2))
 
-# Concatenate u1 and u2 as rows
-U = np.vstack((u1, u2))  # Stack as rows to match Bd's input
-
-# Initial state vector X (4x1)
 X = np.zeros((4, 1))
-Xk = []  # To store state evolution over time
+Xk = []  
 
 # Simulate the system
 for i in range(k):
-    X = np.dot(Ad, X) + np.dot(Bd, U[:, i])  # Ensure U[:, i] is 2D (2x1)
+    X = np.dot(Ad, X) + np.dot(Bd, U[:, i]) 
     Xk.append(X)
 
-# Convert list to array for plotting
 Xk = np.array(Xk)
 
-XK_1= Xk[:, 2, 0]  # Extract first column of Xk
+XK_1= Xk[:, 2, 0] 
 
 # Plot XK_1 vs time
 plt.plot(T[:k], XK_1[:k])
