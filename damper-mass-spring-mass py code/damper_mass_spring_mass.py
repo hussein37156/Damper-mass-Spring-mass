@@ -69,6 +69,3 @@ plt.ylabel('XK_1')
 plt.title('XK_1 vs Time')
 plt.grid(True)
 plt.show()
-
-
-print('done')
