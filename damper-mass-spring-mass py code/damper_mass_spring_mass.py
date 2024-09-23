@@ -35,7 +35,11 @@ for i in range(k):
 
 Xk = np.array(Xk)
 
+<<<<<<< HEAD
 XK_1= Xk[:, 2, 0] 
+=======
+XK_1= Xk[:, 2, 0]  # Extract first column of Xk
+>>>>>>> cb3fcd58782826e04dd3290323f8d2f0d986cb34
 
 # Plot XK_1 vs time
 plt.plot(T[:k], XK_1[:k])
